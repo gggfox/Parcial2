@@ -19,9 +19,9 @@ let SportCollectionSchema = {
 
 let Sport = mongoose.Collection(SportCollectionSchema, {
     addSport = {
-        sports.insert(id, name, num_players);
-        retrun
-    }
+        sports.insert(id, name, num_players),
+        return
+    };
 });
 
 module.exports = {

@@ -12,12 +12,16 @@ function dispPokemon(pokeName) {
     display.innerHTML += `<div>${pokeName}</div>`
     fetch(url, settings)
         .then(result => {
+            if (result.status === 404) {
+                display.innerHTML = `<div>Pokemon not found</div>`;
+                return;
+            }
             console.log(result);
-            display.innerHTML = `<div>${result}</div>`
-            return
+            display.innerHTML = `<div>${result}</div>`;
+            return;
         })
         .catch(err => {
-            display.innerHTML = "Pokemon not found";
+            display.innerHTML = "didnt found any pokemon";
             return
         })
 }

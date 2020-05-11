@@ -25,7 +25,13 @@ app.post('/sports/addSport/:sportId', jsonParser, (req, res) => {
         res.statusCode(409).end();
     }
 
-    //check other spots
+    //unique id check
+    /*
+    if( exist(id) ){
+        res.statusMessage = " This id belongs to another spot ";
+        res.statusCode(400).end();
+    }
+    */
 
     //add to db
     Sport
